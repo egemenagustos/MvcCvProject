@@ -1,0 +1,37 @@
+﻿@using MvcCv.Models.Entity
+@model List<egitimlerim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2>Eğitim Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Alt-Başlık</th>
+        <th>Alt-Başlık 2</th>
+        <th>Gano</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.baslik</td>
+            <td>@item.altBaslik</td>
+            <td>@item.altBaslik2</td>
+            <td>@item.gano</td>
+            <td>@item.tarih</td>
+            <td><a href="/Egitim/EgitimSil/@item.id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Egitim/EgitimGetir/@item.id" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Egitim/EgitimEkle" class="btn btn-outline-primary">Yeni Eğitim Ekle</a>
+

@@ -1,0 +1,35 @@
+﻿@model MvcCv.Models.Entity.egitimlerim
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h4>Yeni Eğitim Ekleme Sayfası</h4>
+<br />
+<form method="post">
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.baslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.baslik, "")
+    <br />
+
+    @Html.Label("Alt-Başlık")
+    @Html.TextBoxFor(x => x.altBaslik, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Alt-Başlık 2")
+    @Html.TextBoxFor(x => x.altBaslik2, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Gano")
+    @Html.TextBoxFor(x => x.gano, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.gano, "")
+    <br />
+
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-dark">Ekle</button>
+</form>
+

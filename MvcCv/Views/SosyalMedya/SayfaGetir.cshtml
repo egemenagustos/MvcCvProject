@@ -1,0 +1,26 @@
+﻿@model MvcCv.Models.Entity.sosyalmedya
+@{
+    ViewBag.Title = "SayfaGetir";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h4>Sosyal Medya Güncelleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.id, new { @class = "form-control" })
+
+    @Html.Label("Sosyal Medya Adı")
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Sosyal Medya Linki")
+    @Html.TextBoxFor(x => x.link, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Sosyal Medya İkonu")
+    @Html.TextBoxFor(x => x.ikon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-dark">Güncelle</button>
+</form>
+
